@@ -1,15 +1,17 @@
 import { Link } from 'react-router-dom'
+import { useAppSelector } from '../../hooks/rtkHooks'
+import DesctopHeader from '../desktopHeader'
+import MobileHeader from '../mobileHeader'
 
-const Header = () => (
-  <header style={{
-    padding: 30,
-    backgroundColor: '#eee'
-  }}>
-    <h1>header</h1>
-    <Link to='/'>Main page</Link>
-    <Link to='/catalog'>Catalog page</Link>
-    <Link to='/cart'>Cart page</Link>
-  </header>
-)
+const Header = () => {
+  const { width } = useAppSelector(state => state.screenWidth)
+
+
+  return (
+    <header>
+      {width > 1200 ? <DesctopHeader /> : <MobileHeader />}
+    </header>
+  )
+}
 
 export default Header
