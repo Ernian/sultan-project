@@ -35,11 +35,10 @@ const DesktopHeader = () => {
           </div>
           <SalesDepartment />
           <PriceList />
-          <CartWidget />
+          <CartWidget widthIcon={41} heightIcon={29} />
         </div>
       </section>
     </>
-
   )
 }
 

@@ -1,9 +1,9 @@
 const CatalogPage = () => (
   <div style={{
-    padding: 50,
+    padding: 10,
     fontSize: 50
   }}>
-    CatalogPage page will be here
+    Catalog page will be here
   </div>
 )
 
