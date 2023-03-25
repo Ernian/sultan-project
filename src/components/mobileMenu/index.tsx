@@ -46,7 +46,10 @@ const MobileMenu = () => {
           }}
         >Меню сайта:</h2>
         <NavLinks />
-        <PriceList />
+        <div style={{ marginTop: 20 }}>
+
+          <PriceList />
+        </div>
       </div>
     </>
 

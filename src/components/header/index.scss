@@ -200,7 +200,6 @@
 
 .price-list {
   max-width: 290px;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,12 +212,6 @@
   @media (min-width:1260px) {
     & {
       padding: 20px 50px;
-    }
-  }
-
-  @media (min-width:1081px) {
-    & {
-      margin-top: 0;
     }
   }
 }

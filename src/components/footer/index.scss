@@ -1,0 +1,88 @@
+footer {
+  padding: 15px;
+  background-color: #3F4E65;
+  color: #FFF;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.footer {
+
+
+  h2 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &__menu-category {
+    display: flex;
+    margin-top: 30px;
+    gap: 15px;
+  }
+
+  &__contacts {
+    margin-top: 25px;
+  }
+
+  &__link {
+    display: block;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 20px;
+  }
+
+  &__contacts-price {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__header-price {
+    display: none;
+  }
+
+  @media(min-width:980px) {
+    & {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__price {
+      display: none;
+    }
+
+    &__menu-category,
+    &__contacts-price {
+      margin-top: 0;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    &__contacts-price {
+      flex-direction: row-reverse;
+    }
+
+    &__contacts {
+      margin-top: 0;
+    }
+
+    &__header-price {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media(min-width:1200px) {
+
+    &__menu-category,
+    &__contacts-price {
+      gap: 90px;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}

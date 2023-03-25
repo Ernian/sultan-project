@@ -1,8 +1,11 @@
 const CartPage = () => (
-  <div style={{
-    padding: 50,
-    fontSize: 50
-  }}>
+  <div
+    style={{
+      padding: 10,
+      fontSize: 50
+    }}
+    className='row'
+  >
     Cart page will be here
   </div>
 )
