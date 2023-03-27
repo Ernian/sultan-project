@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react'
 
 import './index.scss'
-import leftArrow from '../assets/svg/pagination-left-arrow.svg'
-import rightArrow from '../assets/svg/pagination-right-arrow.svg'
+import leftArrow from '../../assets/svg/pagination-left-arrow.svg'
+import rightArrow from '../../assets/svg/pagination-right-arrow.svg'
 
 const Pagination = ({ currentPage, totalPages, setCurrentPage }:
   {

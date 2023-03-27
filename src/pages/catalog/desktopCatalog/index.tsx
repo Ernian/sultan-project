@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import FilterCategory from '../../../components/filterCategory'
 import ProductCard from '../../../components/ProductCard'
-import Pagination from '../../../pagination'
+import Pagination from '../../../components/pagination'
 import {
   Producers,
   Brands,
