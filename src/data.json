@@ -1,0 +1,331 @@
+{
+  "producers": [
+    "Grifon",
+    "Boyscout",
+    "Paclan",
+    "Булгари Грин",
+    "Нэфис"
+  ],
+  "categories": {
+    "bodyCare": "Уход за телом",
+    "armCare": "Уход за руками",
+    "legCare": "Уход за ногами",
+    "faceCare": "Уход за лицом",
+    "hairCare": "Уход за волосами",
+    "forTan": "Средства для загара",
+    "forShaving": "Средства для бритья",
+    "giftSets": "Подарочные наборы",
+    "hygieneProducts": "Гигиеническая продукция",
+    "oralHygiene": "Гигиена полости рта",
+    "paperProducts": "Бумажная продукция"
+  },
+  "brands": [
+    "Nivea",
+    "GRIFON",
+    "Домашний сундук",
+    "HELP",
+    "AOS"
+  ],
+  "typesOfMeasure": [
+    "volume",
+    "weight"
+  ],
+  "products": [
+    {
+      "url": "./src/assets/img/products/product1.png",
+      "title": "Title1",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 450,
+      "barcode": "4604049097548",
+      "producer": "Grifon",
+      "brand": "Nivea",
+      "description": "description1 description1 description1 description1",
+      "price": 50,
+      "category": [
+        "Гигиеническая продукция",
+        "Уход за телом"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product2.png",
+      "title": "Title2",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 150,
+      "barcode": "4604049046348",
+      "producer": "Boyscout",
+      "brand": "GRIFON",
+      "description": "description2 description2 description2 description2 description2 description2 ",
+      "price": 510,
+      "category": [
+        "Уход за ногами"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product3.png",
+      "title": "Title3",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 200,
+      "barcode": "4607939046348",
+      "producer": "Paclan",
+      "brand": "Домашний сундук",
+      "description": "description3 description3 description3",
+      "price": 100,
+      "category": [
+        "Уход за лицом"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product4.png",
+      "title": "Title4",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 300,
+      "barcode": "4607941046348",
+      "producer": "Булгари Грин",
+      "brand": "HELP",
+      "description": "description4 description4 description4",
+      "price": 120,
+      "category": [
+        "Уход за волосами"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product5.png",
+      "title": "Title5",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 320,
+      "barcode": "5007941046348",
+      "producer": "Нэфис",
+      "brand": "AOS",
+      "description": "description5 description5 description5",
+      "price": 170,
+      "category": [
+        "Средства для загара"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product1.png",
+      "title": "Title6",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 320,
+      "barcode": "8527941046348",
+      "producer": "Grifon",
+      "brand": "AOS",
+      "description": "description6 description6 description6",
+      "price": 400,
+      "category": [
+        "Средства для бритья"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product2.png",
+      "title": "Title7",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 500,
+      "barcode": "8173941046348",
+      "producer": "Boyscout",
+      "brand": "Nivea",
+      "description": "description7 description7 description7",
+      "price": 430,
+      "category": [
+        "Подарочные наборы"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product3.png",
+      "title": "Title8",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 1000,
+      "barcode": "8173777046348",
+      "producer": "Paclan",
+      "brand": "HELP",
+      "description": "description8 description8 description8",
+      "price": 550,
+      "category": [
+        "Гигиеническая продукция"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product4.png",
+      "title": "Title9",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 1000,
+      "barcode": "8141577046348",
+      "producer": "Нэфис",
+      "brand": "HELP",
+      "description": "description9 description9 description9",
+      "price": 550,
+      "category": [
+        "Гигиена полости рта"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product5.png",
+      "title": "Title10",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 1030,
+      "barcode": "8141554646348",
+      "producer": "Grifon",
+      "brand": "GRIFON",
+      "description": "description10 description10 description10",
+      "price": 450,
+      "category": [
+        "Уход за руками",
+        "Уход за ногами"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product1.png",
+      "title": "Title11",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 100,
+      "barcode": "8141554951348",
+      "producer": "Paclan",
+      "brand": "AOS",
+      "description": "description11 description11 description11",
+      "price": 40,
+      "category": [
+        "Уход за телом",
+        "Уход за руками",
+        "Уход за ногами"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product2.png",
+      "title": "Title12",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 700,
+      "barcode": "1571554951348",
+      "producer": "Boyscout",
+      "brand": "Домашний сундук",
+      "description": "description12 description12 description12",
+      "price": 330,
+      "category": [
+        "Средства для бритья",
+        "Гигиеническая продукция"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product3.png",
+      "title": "Title13",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 200,
+      "barcode": "2764554951348",
+      "producer": "Нэфис",
+      "brand": "AOS",
+      "description": "description13 description13 description13",
+      "price": 700,
+      "category": [
+        "Уход за волосами",
+        "Подарочные наборы"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product4.png",
+      "title": "Title14",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 2000,
+      "barcode": "9435549518348",
+      "producer": "Boyscout",
+      "brand": "GRIFON",
+      "description": "description14 description14 description14",
+      "price": 610,
+      "category": [
+        "Уход за телом",
+        "Гигиеническая продукция"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product5.png",
+      "title": "Title15",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 1500,
+      "barcode": "1184549518348",
+      "producer": "Paclan",
+      "brand": "AOS",
+      "description": "description15 description15 description15",
+      "price": 60,
+      "category": [
+        "Средства для загара",
+        "Подарочные наборы"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product1.png",
+      "title": "Title16",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 1200,
+      "barcode": "1184567218348",
+      "producer": "Нэфис",
+      "brand": "Nivea",
+      "description": "description16 description16 description16",
+      "price": 990,
+      "category": [
+        "Средства для бритья",
+        "Подарочные наборы",
+        "Гигиеническая продукция"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product2.png",
+      "title": "Title17",
+      "typeOfMeasure": "weight",
+      "valueOfMeasure": 1500,
+      "barcode": "9916549518348",
+      "producer": "Булгари Грин",
+      "brand": "HELP",
+      "description": "description17 description17 description17",
+      "price": 660,
+      "category": [
+        "Уход за телом",
+        "Подарочные наборы",
+        "Гигиеническая продукция"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product3.png",
+      "title": "Title18",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 3000,
+      "barcode": "6745249518348",
+      "producer": "Boyscout",
+      "brand": "Nivea",
+      "description": "description18 description18 description18",
+      "price": 140,
+      "category": [
+        "Гигиеническая продукция",
+        "Гигиена полости рта"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product4.png",
+      "title": "Title19",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 300,
+      "barcode": "6914119518348",
+      "producer": "Boyscout",
+      "brand": "GRIFON",
+      "description": "description19 description19 description19",
+      "price": 1410,
+      "category": [
+        "Уход за лицом",
+        "Подарочные наборы"
+      ]
+    },
+    {
+      "url": "./src/assets/img/products/product5.png",
+      "title": "Title20",
+      "typeOfMeasure": "volume",
+      "valueOfMeasure": 450,
+      "barcode": "7778249518348",
+      "producer": "Grifon",
+      "brand": "GRIFON",
+      "description": "description20 description20 description20",
+      "price": 1420,
+      "category": [
+        "legCare",
+        "hygieneProducts",
+        "giftSets"
+      ]
+    }
+  ]
+}

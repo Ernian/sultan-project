@@ -34,6 +34,19 @@ body {
   font-family: Inter, sans-serif;
 }
 
+.main {
+  padding: 0 15px;
+  background-color: #f9f9f9;
+
+  h1 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: #111;
+  }
+}
+
 .row {
   max-width: 1366px;
   margin: 0 auto;

@@ -5,6 +5,7 @@ import Layout from './components/layout'
 import MainPage from './pages/main'
 import CatalogPage from './pages/catalog'
 import CartPage from './pages/cart'
+import ProductPage from './pages/product'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path='catalog' element={<CatalogPage />} />
           <Route path='cart' element={<CartPage />} />
+          <Route path='product/:id' element={<ProductPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

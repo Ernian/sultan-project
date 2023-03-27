@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit'
 import screenWidthReducer from './screenWidthSlice'
 // import cartReducer from './cartSlice'
 // import searchFilterReducer from './searchFilterSlice'
