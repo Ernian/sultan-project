@@ -29,6 +29,20 @@ const DesktopCatalogPage = ({
   //подготовка массива с названиями категорий
   const allCategories = Object.entries(categories) as [KeysCategories, NamesCategories][]
 
+  const [fieldSort, setFieldSort] = useState<'title' | 'price'>('title')
+  const [orderSort, setOrderSort] = useState<'asc' | 'desc'>('asc')
+
+  const selectHandler: React.ChangeEventHandler<HTMLSelectElement> = event => {
+    if (event.target.name === 'fieldSort') {
+      setFieldSort(event.target.value as 'title' | 'price')
+    }
+    if (event.target.name === 'orderSort') {
+      setOrderSort(event.target.value as 'asc' | 'desc')
+    }
+    console.log('fieldSort', fieldSort)
+    console.log('orderSort', orderSort)
+  }
+
   //подготовка списка товаров с сервера/локального хранилища
   const storage = localStorage.getItem('products')
   const localStorageProducts = storage ? JSON.parse(storage) as IProduct[] : null
@@ -50,7 +64,7 @@ const DesktopCatalogPage = ({
 
   //работа с пагинацией
   const [currentPage, setCurrentPage] = useState<number>(1)
-  const productsPerPage = 15
+  const productsPerPage = 6
   const totalPages = Math.ceil(getFilteredProducts(products).length / productsPerPage)
   const lastIndexProduct = currentPage * productsPerPage
   const firstIndexProduct = lastIndexProduct - productsPerPage
@@ -69,7 +83,15 @@ const DesktopCatalogPage = ({
       )
     }
 
-    return getFilteredProducts(products)
+    const sortFilteredProducts = orderSort === 'asc' ?
+      getFilteredProducts(products).sort((prev, next) => {
+        return prev[fieldSort] > next[fieldSort] ? 1 : -1
+      }) :
+      getFilteredProducts(products).sort((prev, next) => {
+        return prev[fieldSort] > next[fieldSort] ? -1 : 1
+      })
+
+    return sortFilteredProducts
       .slice(firstIndexProduct, lastIndexProduct)
       .map(product => <ProductCard {...product} key={product.barcode} />)
   }
@@ -80,16 +102,16 @@ const DesktopCatalogPage = ({
       <div className='catalog__header'>
         <h1>Косметика и гигиена</h1>
         <div>
-          <label htmlFor='sortField' >Сортировка:
-            <select name='sortField'>
+          <label htmlFor='fieldSort' >Сортировка:
+            <select name='fieldSort' onChange={selectHandler}>
               <option value='title'>Название</option>
               <option value='price'>Цена</option>
             </select>
           </label>
           <label htmlFor='orderSort' style={{ marginLeft: 20 }}>Порядок:
-            <select name='orderSort'>
-              <option value='title'>По возростанию</option>
-              <option value='price'>По убыванию</option>
+            <select name='orderSort' onChange={selectHandler}>
+              <option value='asc'>По возростанию</option>
+              <option value='desc'>По убыванию</option>
             </select>
           </label>
         </div>
@@ -102,6 +124,7 @@ const DesktopCatalogPage = ({
               category={nameCategory}
               keyCategory={keyCategory}
               key={keyCategory}
+              setCurrentPage={setCurrentPage}
               className='catalog__filter_top'
             />
           ))
