@@ -4,6 +4,7 @@ import { IProduct } from '../../types'
 import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import './index.scss'
+import p from './../../assets/img/products/product1.png'
 
 const ProductCard = ({
   url,
@@ -24,7 +25,9 @@ const ProductCard = ({
       <div>
         <Link to={`/product/${barcode}`} className='card__link' >
           <div className='card__image'>
-            <img src={imgUrl} alt={title} />
+            <img src={url} alt="url" />
+            <img src={imgUrl} alt="imgUrl" />
+            <img src={p} alt="import p" />
             <div className='card__measure-info'>
               <img src={typeOfMeasure === 'weight' ? weight : volume} alt={typeOfMeasure} />&nbsp;
               <span>{valueOfMeasure}  {typeOfMeasure === 'weight' ? 'г' : 'мл'}</span>
