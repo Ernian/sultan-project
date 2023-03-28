@@ -4,7 +4,12 @@ import { IProduct } from '../../types'
 import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import './index.scss'
-import p from './../../assets/img/products/product1.png'
+
+import product1 from './../../assets/img/products/product1.png'
+import product2 from './../../assets/img/products/product2.png'
+import product3 from './../../assets/img/products/product3.png'
+import product4 from './../../assets/img/products/product4.png'
+import product5 from './../../assets/img/products/product5.png'
 
 const ProductCard = ({
   url,
@@ -17,17 +22,15 @@ const ProductCard = ({
   description,
   price,
   category }: IProduct) => {
-
-  const imgUrl = new URL(url, import.meta.url).href
+  const images = { product1, product2, product3, product4, product5 }
+  const key = url as keyof typeof images
 
   return (
     <div className='card'>
       <div>
         <Link to={`/product/${barcode}`} className='card__link' >
           <div className='card__image'>
-            <img src={url} alt="url" />
-            <img src={imgUrl} alt="imgUrl" />
-            <img src={p} alt="import p" />
+            <img src={images[key]} alt={title} />
             <div className='card__measure-info'>
               <img src={typeOfMeasure === 'weight' ? weight : volume} alt={typeOfMeasure} />&nbsp;
               <span>{valueOfMeasure}  {typeOfMeasure === 'weight' ? 'г' : 'мл'}</span>

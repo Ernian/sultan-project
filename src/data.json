@@ -32,7 +32,7 @@
   ],
   "products": [
     {
-      "url": "/src/assets/img/products/product1.png",
+      "url": "product1",
       "title": "Title1",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 450,
@@ -47,7 +47,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product2.png",
+      "url": "product2",
       "title": "Title2",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 150,
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product3.png",
+      "url": "product3",
       "title": "Title3",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 200,
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product4.png",
+      "url": "product4",
       "title": "Title4",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 300,
@@ -89,7 +89,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product5.png",
+      "url": "product5",
       "title": "Title5",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 320,
@@ -103,7 +103,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product1.png",
+      "url": "product1",
       "title": "Title6",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 320,
@@ -117,7 +117,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product2.png",
+      "url": "product2",
       "title": "Title7",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 500,
@@ -131,7 +131,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product3.png",
+      "url": "product3",
       "title": "Title8",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 1000,
@@ -145,7 +145,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product4.png",
+      "url": "product4",
       "title": "Title9",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 1000,
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product5.png",
+      "url": "product5",
       "title": "Title10",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 1030,
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product1.png",
+      "url": "product1",
       "title": "Title11",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 100,
@@ -190,7 +190,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product2.png",
+      "url": "product2",
       "title": "Title12",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 700,
@@ -205,7 +205,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product3.png",
+      "url": "product3",
       "title": "Title13",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 200,
@@ -220,7 +220,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product4.png",
+      "url": "product4",
       "title": "Title14",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 2000,
@@ -235,7 +235,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product5.png",
+      "url": "product5",
       "title": "Title15",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 1500,
@@ -250,7 +250,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product1.png",
+      "url": "product1",
       "title": "Title16",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 1200,
@@ -266,7 +266,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product2.png",
+      "url": "product2",
       "title": "Title17",
       "typeOfMeasure": "weight",
       "valueOfMeasure": 1500,
@@ -282,7 +282,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product3.png",
+      "url": "product3",
       "title": "Title18",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 3000,
@@ -297,7 +297,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product4.png",
+      "url": "product4",
       "title": "Title19",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 300,
@@ -312,7 +312,7 @@
       ]
     },
     {
-      "url": "/src/assets/img/products/product5.png",
+      "url": "product5",
       "title": "Title20",
       "typeOfMeasure": "volume",
       "valueOfMeasure": 450,
