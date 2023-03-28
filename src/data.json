@@ -42,8 +42,8 @@
       "description": "description1 description1 description1 description1",
       "price": 50,
       "category": [
-        "Гигиеническая продукция",
-        "Уход за телом"
+        "hygieneProducts",
+        "bodyCare"
       ]
     },
     {
@@ -57,7 +57,7 @@
       "description": "description2 description2 description2 description2 description2 description2 ",
       "price": 510,
       "category": [
-        "Уход за ногами"
+        "legCare"
       ]
     },
     {
@@ -71,7 +71,7 @@
       "description": "description3 description3 description3",
       "price": 100,
       "category": [
-        "Уход за лицом"
+        "faceCare"
       ]
     },
     {
@@ -85,7 +85,7 @@
       "description": "description4 description4 description4",
       "price": 120,
       "category": [
-        "Уход за волосами"
+        "hairCare"
       ]
     },
     {
@@ -99,7 +99,7 @@
       "description": "description5 description5 description5",
       "price": 170,
       "category": [
-        "Средства для загара"
+        "forTan"
       ]
     },
     {
@@ -113,7 +113,7 @@
       "description": "description6 description6 description6",
       "price": 400,
       "category": [
-        "Средства для бритья"
+        "forShaving"
       ]
     },
     {
@@ -127,7 +127,7 @@
       "description": "description7 description7 description7",
       "price": 430,
       "category": [
-        "Подарочные наборы"
+        "giftSets"
       ]
     },
     {
@@ -141,7 +141,7 @@
       "description": "description8 description8 description8",
       "price": 550,
       "category": [
-        "Гигиеническая продукция"
+        "hygieneProducts"
       ]
     },
     {
@@ -155,7 +155,7 @@
       "description": "description9 description9 description9",
       "price": 550,
       "category": [
-        "Гигиена полости рта"
+        "oralHygiene"
       ]
     },
     {
@@ -169,8 +169,8 @@
       "description": "description10 description10 description10",
       "price": 450,
       "category": [
-        "Уход за руками",
-        "Уход за ногами"
+        "armCare",
+        "legCare"
       ]
     },
     {
@@ -184,9 +184,9 @@
       "description": "description11 description11 description11",
       "price": 40,
       "category": [
-        "Уход за телом",
-        "Уход за руками",
-        "Уход за ногами"
+        "bodyCare",
+        "armCare",
+        "legCare"
       ]
     },
     {
@@ -200,8 +200,8 @@
       "description": "description12 description12 description12",
       "price": 330,
       "category": [
-        "Средства для бритья",
-        "Гигиеническая продукция"
+        "forShaving",
+        "hygieneProducts"
       ]
     },
     {
@@ -215,8 +215,8 @@
       "description": "description13 description13 description13",
       "price": 700,
       "category": [
-        "Уход за волосами",
-        "Подарочные наборы"
+        "hairCare",
+        "giftSets"
       ]
     },
     {
@@ -230,8 +230,8 @@
       "description": "description14 description14 description14",
       "price": 610,
       "category": [
-        "Уход за телом",
-        "Гигиеническая продукция"
+        "bodyCare",
+        "hygieneProducts"
       ]
     },
     {
@@ -245,8 +245,8 @@
       "description": "description15 description15 description15",
       "price": 60,
       "category": [
-        "Средства для загара",
-        "Подарочные наборы"
+        "forTan",
+        "giftSets"
       ]
     },
     {
@@ -260,9 +260,9 @@
       "description": "description16 description16 description16",
       "price": 990,
       "category": [
-        "Средства для бритья",
-        "Подарочные наборы",
-        "Гигиеническая продукция"
+        "forShaving",
+        "giftSets",
+        "hygieneProducts"
       ]
     },
     {
@@ -276,9 +276,9 @@
       "description": "description17 description17 description17",
       "price": 660,
       "category": [
-        "Уход за телом",
-        "Подарочные наборы",
-        "Гигиеническая продукция"
+        "bodyCare",
+        "giftSets",
+        "hygieneProducts"
       ]
     },
     {
@@ -292,8 +292,8 @@
       "description": "description18 description18 description18",
       "price": 140,
       "category": [
-        "Гигиеническая продукция",
-        "Гигиена полости рта"
+        "hygieneProducts",
+        "oralHygiene"
       ]
     },
     {
@@ -307,8 +307,8 @@
       "description": "description19 description19 description19",
       "price": 1410,
       "category": [
-        "Уход за лицом",
-        "Подарочные наборы"
+        "faceCare",
+        "giftSets"
       ]
     },
     {

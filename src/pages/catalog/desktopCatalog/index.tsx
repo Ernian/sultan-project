@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useAppSelector } from '../../../hooks/rtkHooks'
 import FilterCategory from '../../../components/filterCategory'
 import ProductCard from '../../../components/ProductCard'
 import Pagination from '../../../components/pagination'
@@ -8,7 +9,8 @@ import {
   ICategories,
   IProduct,
   TypesOfMeasure,
-  ValueCategories
+  NamesCategories,
+  KeysCategories
 } from '../../../types'
 
 const DesktopCatalogPage = ({
@@ -24,22 +26,51 @@ const DesktopCatalogPage = ({
   typesOfMeasure: TypesOfMeasure[],
   products: IProduct[]
 }) => {
-  const allCategories = Object.values(categories) as ValueCategories[]
+  //подготовка массива с названиями категорий
+  const allCategories = Object.entries(categories) as [KeysCategories, NamesCategories][]
 
+  //подготовка списка товаров с сервера/локального хранилища
   const storage = localStorage.getItem('products')
   const localStorageProducts = storage ? JSON.parse(storage) as IProduct[] : null
   const products = (localStorageProducts && localStorageProducts.length) ?
     localStorageProducts : jsonProducts
 
+  const filters = useAppSelector(state => state.filters)
+  const getFilteredProducts = (products: IProduct[]) => {
+    //если ни один фильтр не включен
+    if (!Object.values(filters).some(filter => filter)) {
+      return products
+    }
+
+    //возвращаем товар если он соответствует хотя бы одной выбранной категории
+    return products.filter(product => (
+      product.category.some(category => filters[category])
+    ))
+  }
+
+  //работа с пагинацией
   const [currentPage, setCurrentPage] = useState<number>(1)
   const productsPerPage = 15
-  const totalPages = Math.ceil(products.length / productsPerPage)
+  const totalPages = Math.ceil(getFilteredProducts(products).length / productsPerPage)
   const lastIndexProduct = currentPage * productsPerPage
   const firstIndexProduct = lastIndexProduct - productsPerPage
 
   const renderProducts = (products: IProduct[]) => {
-    if (!products.length) return <h3>Нет подходящих товаров</h3>
-    return products.slice(firstIndexProduct, lastIndexProduct)
+    if (!totalPages) {
+      return (
+        <h3 style={{
+          fontSize: 40,
+          fontWeight: 500,
+          color: '#111',
+          margin: '40px 0'
+        }}>
+          Нет подходящих товаров
+        </h3>
+      )
+    }
+
+    return getFilteredProducts(products)
+      .slice(firstIndexProduct, lastIndexProduct)
       .map(product => <ProductCard {...product} key={product.barcode} />)
   }
 
@@ -65,13 +96,16 @@ const DesktopCatalogPage = ({
       </div>
 
       <div className='catalog__filter'>
-        {allCategories.map(category => (
-          <FilterCategory
-            category={category}
-            key={category}
-            className='catalog__filter_top'
-          />
-        ))}
+        {
+          allCategories.map(([keyCategory, nameCategory]) => (
+            <FilterCategory
+              category={nameCategory}
+              keyCategory={keyCategory}
+              key={keyCategory}
+              className='catalog__filter_top'
+            />
+          ))
+        }
       </div>
 
       <div className='catalog__wrapper'>

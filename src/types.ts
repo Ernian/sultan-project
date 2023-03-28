@@ -2,25 +2,19 @@ export interface IScreenWidth {
   width: number
 }
 
-export interface IProduct {
-  url: string,
-  title: string,
-  typeOfMeasure: TypesOfMeasure,
-  valueOfMeasure: number,
-  barcode: string,
-  producer: Producers,
-  brand: Brands,
-  description: string,
-  price: number,
-  category: ValueCategories[]
-}
-
 export type Producers = 'Grifon' |
   'Boyscout' |
   'Paclan' |
   'Булгари Грин' |
   'Нэфис'
 
+export type Brands = 'Nivea' |
+  'GRIFON' |
+  'Домашний сундук' |
+  'HELP' |
+  'AOS'
+
+export type TypesOfMeasure = 'volume' | 'weight'
 
 export interface ICategories {
   bodyCare: 'Уход за телом',
@@ -37,16 +31,20 @@ export interface ICategories {
 }
 
 export type KeysCategories = keyof ICategories
-export type ValueCategories = ICategories[KeysCategories]
+export type NamesCategories = ICategories[KeysCategories]
 
-
-export type Brands = 'Nivea' |
-  'GRIFON' |
-  'Домашний сундук' |
-  'HELP' |
-  'AOS'
-
-export type TypesOfMeasure = 'volume' | 'weight'
+export interface IProduct {
+  url: string,
+  title: string,
+  typeOfMeasure: TypesOfMeasure,
+  valueOfMeasure: number,
+  barcode: string,
+  producer: Producers,
+  brand: Brands,
+  description: string,
+  price: number,
+  category: KeysCategories[]
+}
 
 export interface IData {
   producers: Producers[],

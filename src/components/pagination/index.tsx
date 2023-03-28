@@ -33,7 +33,7 @@ const Pagination = ({ currentPage, totalPages, setCurrentPage }:
     setCurrentPage(currentPage => --currentPage)
   }
 
-  return (
+  return totalPages > 0 ?
     <div className='pagination'>
       <img
         src={leftArrow}
@@ -49,7 +49,7 @@ const Pagination = ({ currentPage, totalPages, setCurrentPage }:
         style={{ cursor: currentPage === totalPages ? 'auto' : 'pointer' }}
       />
     </div>
-  )
+    : null
 }
 
 export default Pagination
