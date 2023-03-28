@@ -17,12 +17,14 @@ const ProductCard = ({
   price,
   category }: IProduct) => {
 
+  const imgUrl = new URL(url, import.meta.url).href
+
   return (
     <div className='card'>
       <div>
         <Link to={`/product/${barcode}`} className='card__link' >
           <div className='card__image'>
-            <img src={url} alt={title} />
+            <img src={imgUrl} alt={title} />
             <div className='card__measure-info'>
               <img src={typeOfMeasure === 'weight' ? weight : volume} alt={typeOfMeasure} />&nbsp;
               <span>{valueOfMeasure}  {typeOfMeasure === 'weight' ? 'г' : 'мл'}</span>
