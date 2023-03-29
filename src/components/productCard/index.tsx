@@ -4,6 +4,7 @@ import { IProduct } from '../../types'
 import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import './index.scss'
+import { categories } from './../../data.json'
 
 import product1 from './../../assets/img/products/product1.png'
 import product2 from './../../assets/img/products/product2.png'
@@ -53,6 +54,10 @@ const ProductCard = ({
           <p>
             <span>Бренд:</span>
             &nbsp;{brand}
+          </p>
+          <p>
+            <span>Категории:</span>&nbsp;
+            {category.map(category => categories[category]).join(', ')}
           </p>
         </div>
       </div>
