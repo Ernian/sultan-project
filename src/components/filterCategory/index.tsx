@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/rtkHooks'
-import { actionSetFilter } from '../../store/filterSlice'
+import { setCategory } from '../../store/filterSlice'
 import { NamesCategories, KeysCategories } from '../../types'
 
 const FilterCategory = ({
@@ -16,20 +16,20 @@ const FilterCategory = ({
     setCurrentPage: Dispatch<SetStateAction<number>>
   }) => {
   const dispatch = useAppDispatch()
-  const setFilter = () => {
-    dispatch(actionSetFilter(keyCategory))
+  const handlerSetCategory = () => {
+    dispatch(setCategory(keyCategory))
     setCurrentPage(1)
   }
 
-  const filters = useAppSelector(state => state.filters)
-  const classNames = filters[keyCategory] ?
+  const { selectedCategories } = useAppSelector(state => state.filters)
+  const classNames = selectedCategories[keyCategory] ?
     `${className} catalog__filter_active`
     : className
 
   return (
     <div
       className={classNames}
-      onClick={setFilter}
+      onClick={handlerSetCategory}
     >
       {category}
     </div>

@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, ChangeEventHandler } from 'react'
 import { useAppSelector } from '../../../hooks/rtkHooks'
 import FilterCategory from '../../../components/filterCategory'
-import ProductCard from '../../../components/ProductCard'
+import ProductCard from '../../../components/productCard'
 import Pagination from '../../../components/pagination'
+import CatalogSideBar from '../../../components/catalogSideBar'
 import {
   Producers,
   Brands,
@@ -32,15 +33,13 @@ const DesktopCatalogPage = ({
   const [fieldSort, setFieldSort] = useState<'title' | 'price'>('title')
   const [orderSort, setOrderSort] = useState<'asc' | 'desc'>('asc')
 
-  const selectHandler: React.ChangeEventHandler<HTMLSelectElement> = event => {
+  const selectHandler: ChangeEventHandler<HTMLSelectElement> = event => {
     if (event.target.name === 'fieldSort') {
       setFieldSort(event.target.value as 'title' | 'price')
     }
     if (event.target.name === 'orderSort') {
       setOrderSort(event.target.value as 'asc' | 'desc')
     }
-    console.log('fieldSort', fieldSort)
-    console.log('orderSort', orderSort)
   }
 
   //подготовка списка товаров с сервера/локального хранилища
@@ -49,18 +48,28 @@ const DesktopCatalogPage = ({
   const products = (localStorageProducts && localStorageProducts.length) ?
     localStorageProducts : jsonProducts
 
-  const filters = useAppSelector(state => state.filters)
+  const { selectedCategories, priceRange } = useAppSelector(state => state.filters)
   const getFilteredProducts = (products: IProduct[]) => {
+    let result = getFilteredByCategoryProducts(products)
+    result = getFilteredByPriceProducts(result)
+
+    return result
+  }
+  const getFilteredByCategoryProducts = (products: IProduct[]) => {
     //если ни один фильтр не включен
-    if (!Object.values(filters).some(filter => filter)) {
+    if (!Object.values(selectedCategories).some(filter => filter)) {
       return products
     }
 
     //возвращаем товар если он соответствует хотя бы одной выбранной категории
-    return products.filter(product => (
-      product.category.some(category => filters[category])
+    return products.filter(({ category }) => (
+      category.some(category => selectedCategories[category])
     ))
   }
+
+  const getFilteredByPriceProducts = (products: IProduct[]) => (
+    products.filter(({ price }) => price > priceRange.min && price < priceRange.max)
+  )
 
   //работа с пагинацией
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -132,11 +141,7 @@ const DesktopCatalogPage = ({
       </div>
 
       <div className='catalog__wrapper'>
-        <aside className='catalog__aside'
-          style={{ backgroundColor: '#eee', padding: 10 }}
-        >
-          <h3>ПОДБОР ПО ПАРАМЕТРАМ</h3>
-        </aside>
+        <CatalogSideBar />
         <div className='catalog__container'>
           <div className='catalog__products-cards'>
             {renderProducts(products)}

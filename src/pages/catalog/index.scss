@@ -51,8 +51,11 @@
   }
 
   &__aside {
-    flex-basis: 300px;
+    width: 300px;
+    flex-grow: 0;
     flex-shrink: 0;
+    padding: 10px;
+    overflow-x: auto;
 
     h3 {
       font-weight: 500;
