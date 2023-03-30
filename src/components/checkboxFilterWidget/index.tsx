@@ -73,7 +73,12 @@ const CheckboxFilterWidget = ({
             type="checkbox"
             name={item}
             id={`${type + i}`}
-            onChange={checkboxChangeHandler} />
+            onChange={checkboxChangeHandler}
+            checked={type === 'producer' ?
+              selectedProducers.includes(item as Producers) :
+              selectedBrands.includes(item as Brands)
+            }
+          />
           {item}&nbsp;({amount[item]})
         </label>
       )
@@ -86,7 +91,12 @@ const CheckboxFilterWidget = ({
             type="checkbox"
             name={item}
             id={`${type + i}`}
-            onChange={checkboxChangeHandler} />
+            onChange={checkboxChangeHandler}
+            checked={type === 'producer' ?
+              selectedProducers.includes(item as Producers) :
+              selectedBrands.includes(item as Brands)
+            }
+          />
           {item}
         </label>
       )
