@@ -54,18 +54,15 @@ const CheckboxFilterWidget = ({
     setCurrentPage(1)
   }
 
-  type Union = Producers | Brands
-
   // подсчет товаров, соответствующих выбранному производителю/бренду
   const amount = list.reduce((result, item) => {
     for (let product of products) {
       if (item === product[type]) {
-        //@ts-ignore
         result[item] = result[item] ? result[item] + 1 : 1
       }
     }
     return result
-  }, {} as { Union: number })
+  }, {} as any)
 
   //поиск по списку чекбоксов
   const visibleList = list.reduce((arr, item, i) => {

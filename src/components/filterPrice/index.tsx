@@ -1,8 +1,9 @@
-import { ChangeEventHandler } from 'react'
+import { Dispatch, ChangeEventHandler, SetStateAction } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/rtkHooks'
 import { setPriceRange } from '../../store/filterSlice'
 
-const FilterPrice = () => {
+const FilterPrice = ({ setCurrentPage }:
+  { setCurrentPage: Dispatch<SetStateAction<number>> }) => {
   const { min, max } = useAppSelector(state => state.filters.priceRange)
   const dispatch = useAppDispatch()
 
@@ -10,6 +11,7 @@ const FilterPrice = () => {
     const key = target.name as 'min' | 'max'
     const value = parseInt(target.value) || 0
     dispatch(setPriceRange({ key, value })) || 1
+    setCurrentPage(1)
   }
 
   return (

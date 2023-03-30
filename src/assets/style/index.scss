@@ -40,10 +40,15 @@ body {
 
   h1 {
     font-weight: 500;
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 20px;
+    line-height: 24px;
     text-transform: uppercase;
     color: #111;
+
+    @media (min-width:1081px) {
+      font-size: 40px;
+      line-height: 48px;
+    }
   }
 }
 

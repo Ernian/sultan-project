@@ -20,6 +20,27 @@
     }
   }
 
+  &__sort-block_desk {
+    display: none;
+
+    @media(min-width:950px) {
+      display: block;
+    }
+  }
+
+  &__sort-block_mob {
+    display: block;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media(min-width:950px) {
+      display: none;
+    }
+  }
+
+
   &__filter {
     margin-top: 25px;
     display: flex;
@@ -29,29 +50,45 @@
   }
 
   &__filter_top {
-    padding: 10px;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    color: #3F4E65;
-    background: #FFF;
-    border-radius: 10px;
-    cursor: pointer;
+    display: none;
+
+    @media(min-width:1081px) {
+      display: block;
+      padding: 10px 0px;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      color: #3F4E65;
+      background: #FFF;
+      border-radius: 10px;
+      cursor: pointer;
+    }
   }
 
   &__filter_left {
-    padding: 10px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #3F4E65;
+    padding: 5px;
     border-radius: 10px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: #111;
     cursor: pointer;
+
+    @media (min-width:950px) {
+      padding: 10px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #111;
+    }
   }
 
   &__filter_left:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 2px;
+
+    @media (min-width:950px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__filter_active {
@@ -59,10 +96,15 @@
   }
 
   &__wrapper {
-    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 30px;
+
+    @media(min-width:950px) {
+      margin-top: 30px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__products-cards {
@@ -73,5 +115,13 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+  }
+
+  .back-button {
+    display: inline-flex;
+
+    @media (min-width:950px) {
+      display: none;
+    }
   }
 }

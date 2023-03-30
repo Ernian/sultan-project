@@ -2,8 +2,41 @@
   width: 300px;
   flex-grow: 0;
   flex-shrink: 0;
-  padding: 10px;
-  overflow-x: auto;
+  position: relative;
+  overflow: hidden;
+
+
+  &__header {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 5px;
+    background-color: #f9f9f9;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__show-filters-arrow {
+    transition: all 0.3s;
+
+    @media (min-width:950px) {
+      display: none;
+    }
+  }
+
+  &__filters_open,
+  &__filters_close {
+    position: relative;
+    z-index: 0;
+    transition: all ease-in-out 0.3s;
+  }
+
+  &__filters_open {
+    margin-top: 0;
+  }
+
+  &__filters_close {
+    margin-top: -200%;
+  }
 
   h3 {
     text-transform: capitalize;
@@ -11,5 +44,13 @@
     font-size: 16px;
     line-height: 24px;
     color: #111;
+  }
+
+  .deg90 {
+    transform: rotate(90deg);
+  }
+
+  .deg270 {
+    transform: rotate(-90deg);
   }
 }
