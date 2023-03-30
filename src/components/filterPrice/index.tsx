@@ -8,8 +8,8 @@ const FilterPrice = () => {
 
   const changeHandler: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
     const key = target.name as 'min' | 'max'
-    const value = parseInt(target.value)
-    dispatch(setPriceRange({ key, value }))
+    const value = parseInt(target.value) || 0
+    dispatch(setPriceRange({ key, value })) || 1
   }
 
   return (

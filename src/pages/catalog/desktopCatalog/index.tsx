@@ -48,28 +48,47 @@ const DesktopCatalogPage = ({
   const products = (localStorageProducts && localStorageProducts.length) ?
     localStorageProducts : jsonProducts
 
-  const { selectedCategories, priceRange } = useAppSelector(state => state.filters)
+  const {
+    selectedCategories,
+    priceRange,
+    selectedProducers,
+    selectedBrands
+  } = useAppSelector(state => state.filters)
+
   const getFilteredProducts = (products: IProduct[]) => {
     let result = getFilteredByCategoryProducts(products)
     result = getFilteredByPriceProducts(result)
+    result = getFilteredByProducerProducts(result)
+    result = getFilteredByBrandProducts(result)
 
     return result
   }
+
   const getFilteredByCategoryProducts = (products: IProduct[]) => {
     //если ни один фильтр не включен
-    if (!Object.values(selectedCategories).some(filter => filter)) {
-      return products
-    }
+    if (!selectedCategories.length) return products
 
     //возвращаем товар если он соответствует хотя бы одной выбранной категории
-    return products.filter(({ category }) => (
-      category.some(category => selectedCategories[category])
+    return products.filter(({ categories }) => (
+      categories.some(category => selectedCategories.includes(category))
     ))
   }
 
   const getFilteredByPriceProducts = (products: IProduct[]) => (
     products.filter(({ price }) => price > priceRange.min && price < priceRange.max)
   )
+
+  const getFilteredByProducerProducts = (products: IProduct[]) => {
+    if (!selectedProducers.length) return products
+
+    return products.filter(({ producer }) => selectedProducers.includes(producer))
+  }
+
+  const getFilteredByBrandProducts = (products: IProduct[]) => {
+    if (!selectedBrands.length) return products
+
+    return products.filter(({ brand }) => selectedBrands.includes(brand))
+  }
 
   //работа с пагинацией
   const [currentPage, setCurrentPage] = useState<number>(1)
@@ -141,19 +160,23 @@ const DesktopCatalogPage = ({
       </div>
 
       <div className='catalog__wrapper'>
-        <CatalogSideBar />
+        <CatalogSideBar
+          producers={producers}
+          brands={brands}
+          setCurrentPage={setCurrentPage}
+        />
         <div className='catalog__container'>
           <div className='catalog__products-cards'>
             {renderProducts(products)}
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.
+            </p>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              setCurrentPage={setCurrentPage}
+            />
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.
-          </p>
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            setCurrentPage={setCurrentPage}
-          />
         </div>
       </div>
     </div>

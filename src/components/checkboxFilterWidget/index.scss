@@ -1,0 +1,58 @@
+.filter-widget {
+  margin-top: 40px;
+  position: relative;
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111;
+    margin-bottom: 15px;
+  }
+
+  &__container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: 0.3s;
+
+    label {
+      line-height: 21px;
+      color: #3F4E65;
+
+      input {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__show-all {
+    position: absolute;
+    left: 0px;
+    bottom: -25px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #3F4E65;
+    cursor: pointer;
+  }
+
+  .hide {
+    height: 70px;
+    overflow: hidden;
+  }
+
+  .show {
+    height: auto;
+    overflow: auto;
+  }
+
+  .block {
+    display: block;
+  }
+
+  .none {
+    display: none;
+  }
+}

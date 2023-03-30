@@ -4,7 +4,7 @@ import { IProduct } from '../../types'
 import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import './index.scss'
-import { categories } from './../../data.json'
+import { categories as categoriesNames } from './../../data.json'
 
 import product1 from './../../assets/img/products/product1.png'
 import product2 from './../../assets/img/products/product2.png'
@@ -22,7 +22,7 @@ const ProductCard = ({
   brand,
   description,
   price,
-  category }: IProduct) => {
+  categories }: IProduct) => {
   const images = { product1, product2, product3, product4, product5 }
   const key = url as keyof typeof images
 
@@ -57,7 +57,7 @@ const ProductCard = ({
           </p>
           <p>
             <span>Категории:</span>&nbsp;
-            {category.map(category => categories[category]).join(', ')}
+            {categories.map(category => categoriesNames[category]).join(', ')}
           </p>
         </div>
       </div>

@@ -43,7 +43,7 @@ export interface IProduct {
   brand: Brands,
   description: string,
   price: number,
-  category: KeysCategories[]
+  categories: KeysCategories[]
 }
 
 export interface IData {

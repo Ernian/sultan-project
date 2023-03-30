@@ -41,7 +41,7 @@
       "brand": "Nivea",
       "description": "description1 description1 description1 description1",
       "price": 50,
-      "category": [
+      "categories": [
         "hygieneProducts",
         "bodyCare"
       ]
@@ -56,7 +56,7 @@
       "brand": "GRIFON",
       "description": "description2 description2 description2 description2 description2 description2 ",
       "price": 510,
-      "category": [
+      "categories": [
         "legCare"
       ]
     },
@@ -70,7 +70,7 @@
       "brand": "Домашний сундук",
       "description": "description3 description3 description3",
       "price": 100,
-      "category": [
+      "categories": [
         "faceCare"
       ]
     },
@@ -84,7 +84,7 @@
       "brand": "HELP",
       "description": "description4 description4 description4",
       "price": 120,
-      "category": [
+      "categories": [
         "hairCare"
       ]
     },
@@ -98,7 +98,7 @@
       "brand": "AOS",
       "description": "description5 description5 description5",
       "price": 170,
-      "category": [
+      "categories": [
         "forTan"
       ]
     },
@@ -112,7 +112,7 @@
       "brand": "AOS",
       "description": "description6 description6 description6",
       "price": 400,
-      "category": [
+      "categories": [
         "forShaving"
       ]
     },
@@ -126,7 +126,7 @@
       "brand": "Nivea",
       "description": "description7 description7 description7",
       "price": 430,
-      "category": [
+      "categories": [
         "giftSets"
       ]
     },
@@ -140,7 +140,7 @@
       "brand": "HELP",
       "description": "description8 description8 description8",
       "price": 550,
-      "category": [
+      "categories": [
         "hygieneProducts"
       ]
     },
@@ -154,7 +154,7 @@
       "brand": "HELP",
       "description": "description9 description9 description9",
       "price": 550,
-      "category": [
+      "categories": [
         "oralHygiene"
       ]
     },
@@ -168,7 +168,7 @@
       "brand": "GRIFON",
       "description": "description10 description10 description10",
       "price": 450,
-      "category": [
+      "categories": [
         "armCare",
         "legCare"
       ]
@@ -183,7 +183,7 @@
       "brand": "AOS",
       "description": "description11 description11 description11",
       "price": 40,
-      "category": [
+      "categories": [
         "bodyCare",
         "armCare",
         "legCare"
@@ -199,7 +199,7 @@
       "brand": "Домашний сундук",
       "description": "description12 description12 description12",
       "price": 330,
-      "category": [
+      "categories": [
         "forShaving",
         "hygieneProducts"
       ]
@@ -214,7 +214,7 @@
       "brand": "AOS",
       "description": "description13 description13 description13",
       "price": 700,
-      "category": [
+      "categories": [
         "hairCare",
         "giftSets"
       ]
@@ -229,7 +229,7 @@
       "brand": "GRIFON",
       "description": "description14 description14 description14",
       "price": 610,
-      "category": [
+      "categories": [
         "bodyCare",
         "hygieneProducts"
       ]
@@ -244,7 +244,7 @@
       "brand": "AOS",
       "description": "description15 description15 description15",
       "price": 60,
-      "category": [
+      "categories": [
         "forTan",
         "giftSets"
       ]
@@ -259,7 +259,7 @@
       "brand": "Nivea",
       "description": "description16 description16 description16",
       "price": 990,
-      "category": [
+      "categories": [
         "forShaving",
         "giftSets",
         "hygieneProducts"
@@ -275,7 +275,7 @@
       "brand": "HELP",
       "description": "description17 description17 description17",
       "price": 660,
-      "category": [
+      "categories": [
         "bodyCare",
         "giftSets",
         "hygieneProducts"
@@ -291,7 +291,7 @@
       "brand": "Nivea",
       "description": "description18 description18 description18",
       "price": 140,
-      "category": [
+      "categories": [
         "hygieneProducts",
         "oralHygiene"
       ]
@@ -306,7 +306,7 @@
       "brand": "GRIFON",
       "description": "description19 description19 description19",
       "price": 1410,
-      "category": [
+      "categories": [
         "faceCare",
         "giftSets"
       ]
@@ -321,7 +321,7 @@
       "brand": "GRIFON",
       "description": "description20 description20 description20",
       "price": 1420,
-      "category": [
+      "categories": [
         "legCare",
         "hygieneProducts",
         "giftSets"

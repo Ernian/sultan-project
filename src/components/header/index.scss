@@ -63,7 +63,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // padding: 0 15px;
+}
+
+.search-input {
+  max-width: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #EDEDED;
+  border-radius: 50px;
+  padding: 12px 20px;
+
+  input {
+    background-color: #EDEDED;
+    max-width: 100px;
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  @media (min-width:1260px) {
+    input {
+      max-width: 150px;
+    }
+  }
 }
 
 .contacts {
@@ -151,31 +176,6 @@
   @media (min-width:1260px) {
     & {
       padding: 0 50px;
-    }
-  }
-}
-
-.search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background-color: #EDEDED;
-  border-radius: 50px;
-  padding: 12px 20px;
-
-  input {
-    background-color: #EDEDED;
-    max-width: 100px;
-  }
-
-  img {
-    cursor: pointer;
-  }
-
-  @media (min-width:1260px) {
-    input {
-      max-width: 150px;
     }
   }
 }

@@ -29,7 +29,7 @@ const DesktopHeader = () => {
             <span>Каталог</span>
             <img src={catalogIcon} alt="catalog icon" />
           </Link>
-          <div className="search">
+          <div className="search-input">
             <input type="text" placeholder='Поиск...' />
             <img src={searchIcon} alt="search icon" />
           </div>

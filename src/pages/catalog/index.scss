@@ -50,21 +50,6 @@
     gap: 30px;
   }
 
-  &__aside {
-    width: 300px;
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding: 10px;
-    overflow-x: auto;
-
-    h3 {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-      color: #111;
-    }
-  }
-
   &__products-cards {
     flex-basis: auto;
     flex-grow: 1;

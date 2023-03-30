@@ -2,19 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { KeysCategories, Producers, Brands } from './../types'
 
 const initialState = {
-  selectedCategories: {
-    bodyCare: false,
-    armCare: false,
-    legCare: false,
-    faceCare: false,
-    hairCare: false,
-    forTan: false,
-    forShaving: false,
-    giftSets: false,
-    hygieneProducts: false,
-    oralHygiene: false,
-    paperProducts: false,
-  },
+  selectedCategories: [] as KeysCategories[],
   priceRange: {
     min: 0,
     max: 10000,
@@ -28,13 +16,36 @@ const filterSlice = createSlice({
   initialState,
   reducers: {
     setCategory(state, { payload }: PayloadAction<KeysCategories>) {
-      state.selectedCategories[payload] = !state.selectedCategories[payload]
+      state.selectedCategories.push(payload)
+    },
+    deleteCategory(state, { payload }: PayloadAction<KeysCategories>) {
+      state.selectedCategories = state.selectedCategories.filter(category => category !== payload)
     },
     setPriceRange(state, { payload: { key, value } }: PayloadAction<{ key: 'min' | 'max', value: number }>) {
       state.priceRange[key] = value
+    },
+    setSelectedProducer(state, { payload }: PayloadAction<Producers>) {
+      state.selectedProducers.push(payload)
+    },
+    deleteSelectedProducer(state, { payload }: PayloadAction<Producers>) {
+      state.selectedProducers = state.selectedProducers.filter(producer => producer !== payload)
+    },
+    setSelectedBrand(state, { payload }: PayloadAction<Brands>) {
+      state.selectedBrands.push(payload)
+    },
+    deleteSelectedBrand(state, { payload }: PayloadAction<Brands>) {
+      state.selectedBrands = state.selectedBrands.filter(brand => brand !== payload)
     }
   }
 })
 
-export const { setCategory, setPriceRange } = filterSlice.actions
+export const {
+  setCategory,
+  deleteCategory,
+  setPriceRange,
+  setSelectedProducer,
+  setSelectedBrand,
+  deleteSelectedProducer,
+  deleteSelectedBrand
+} = filterSlice.actions
 export default filterSlice.reducer
