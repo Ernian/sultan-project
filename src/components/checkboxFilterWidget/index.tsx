@@ -6,19 +6,21 @@ import {
   deleteSelectedProducer,
   deleteSelectedBrand
 } from '../../store/filterSlice'
-import { Producers, Brands } from '../../types'
+import { Producers, Brands, IProduct } from '../../types'
 import searchIcon from '../../assets/svg/search-icon.svg'
 import './index.scss'
 
 const CheckboxFilterWidget = ({
   title,
   list,
+  products,
   type,
   setCurrentPage
 }: {
   title: string,
   list: string[],
-  type: string,
+  products: IProduct[],
+  type: 'brand' | 'producer',
   setCurrentPage: Dispatch<SetStateAction<number>>
 }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -52,6 +54,51 @@ const CheckboxFilterWidget = ({
     setCurrentPage(1)
   }
 
+  type Union = Producers | Brands
+
+  // подсчет товаров, соответствующих выбранному производителю/бренду
+  const amount = list.reduce((result, item) => {
+    for (let product of products) {
+      if (item === product[type]) {
+        //@ts-ignore
+        result[item] = result[item] ? result[item] + 1 : 1
+      }
+    }
+    return result
+  }, {} as { Union: number })
+
+  //поиск по списку чекбоксов
+  const visibleList = list.reduce((arr, item, i) => {
+    if (!searchQuery) {
+      const checkbox = (
+        <label htmlFor={`${type + i}`} key={`${item + i}`}>
+          <input
+            type="checkbox"
+            name={item}
+            id={`${type + i}`}
+            onChange={checkboxChangeHandler} />
+          {item}&nbsp;({amount[item]})
+        </label>
+      )
+      arr.push(checkbox)
+      return arr
+    } else if (item.toLowerCase().includes(searchQuery.toLowerCase())) {
+      const checkbox = (
+        <label htmlFor={`${type + i}`} key={`${item + i}`}>
+          <input
+            type="checkbox"
+            name={item}
+            id={`${type + i}`}
+            onChange={checkboxChangeHandler} />
+          {item}
+        </label>
+      )
+      arr.push(checkbox)
+      return arr
+    }
+    return arr
+  }, [] as JSX.Element[])
+
   return (
     <div className='filter-widget'>
       <h4 className='filter-widget__title'>{title}</h4>
@@ -66,36 +113,7 @@ const CheckboxFilterWidget = ({
       </div>
       <div className={`filter-widget__container ${isOpen || searchQuery ? 'show' : 'hide'}`}>
         {
-          list.reduce((arr, item, i) => {
-            if (!searchQuery) {
-              const checkbox = (
-                <label htmlFor={`${type + i}`} key={`${item + i}`}>
-                  <input
-                    type="checkbox"
-                    name={item}
-                    id={`${type + i}`}
-                    onChange={checkboxChangeHandler} />
-                  {item}
-                </label>
-              )
-              arr.push(checkbox)
-              return arr
-            } else if (item.toLowerCase().includes(searchQuery.toLowerCase())) {
-              const checkbox = (
-                <label htmlFor={`${type + i}`} key={`${item + i}`}>
-                  <input
-                    type="checkbox"
-                    name={item}
-                    id={`${type + i}`}
-                    onChange={checkboxChangeHandler} />
-                  {item}
-                </label>
-              )
-              arr.push(checkbox)
-              return arr
-            }
-            return arr
-          }, [] as JSX.Element[])
+          !visibleList.length ? <span>Ничего не найдено</span> : visibleList
         }
       </div>
       <div

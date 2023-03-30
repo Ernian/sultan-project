@@ -164,6 +164,8 @@ const DesktopCatalogPage = ({
           producers={producers}
           brands={brands}
           setCurrentPage={setCurrentPage}
+          allCategories={allCategories}
+          products={jsonProducts}
         />
         <div className='catalog__container'>
           <div className='catalog__products-cards'>
