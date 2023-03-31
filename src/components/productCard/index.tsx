@@ -23,7 +23,7 @@ const ProductCard = ({
   allCategories,
 }: IPropsProductCard) => {
 
-  const src = import.meta.env.PROD ? url.prod : url.dev
+  const src = import.meta.env.PROD ? new URL(url.prod, import.meta.url).href : url.dev
 
   return (
     <div className='card'>
