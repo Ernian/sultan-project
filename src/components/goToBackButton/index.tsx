@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import './index.scss'
 import arrow from '../../assets/svg/back-arrow-icon.svg'
 
 const GoToBackButton = () => {
@@ -16,7 +17,6 @@ const GoToBackButton = () => {
         color: '#3F4E65',
         alignItems: 'center',
         gap: 5,
-        marginBottom: 20,
         cursor: 'pointer'
       }}
       className='back-button'

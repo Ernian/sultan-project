@@ -1,0 +1,7 @@
+.back-button {
+  display: inline-flex;
+
+  @media (min-width:950px) {
+    display: none;
+  }
+}

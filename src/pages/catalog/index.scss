@@ -5,6 +5,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    padding-top: 15px;
+
+    @media(min-width:950px) {
+      padding-top: 0;
+    }
 
     label {
       font-weight: 500;
@@ -115,13 +120,5 @@
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-  }
-
-  .back-button {
-    display: inline-flex;
-
-    @media (min-width:950px) {
-      display: none;
-    }
   }
 }

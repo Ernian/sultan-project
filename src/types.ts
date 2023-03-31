@@ -34,7 +34,10 @@ export type KeysCategories = keyof ICategories
 export type NamesCategories = ICategories[KeysCategories]
 
 export interface IProduct {
-  url: string,
+  url: {
+    dev: string,
+    prod: string
+  },
   title: string,
   typeOfMeasure: TypesOfMeasure,
   valueOfMeasure: number,
