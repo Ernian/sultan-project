@@ -2,16 +2,11 @@ import { useParams } from 'react-router-dom'
 import AddToCartButton from '../../components/addToCartButton'
 import GoToBackButton from '../../components/goToBackButton'
 import { ICategories, IProduct } from '../../types'
+import { producatImages } from '../../productsImages'
 import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import shareIcon from '../../assets/svg/share-icon.svg'
 import downloadIcon from '../../assets/svg/download-black-icon.svg'
-
-import product1 from './../../assets/img/products/product1.png'
-import product2 from './../../assets/img/products/product2.png'
-import product3 from './../../assets/img/products/product3.png'
-import product4 from './../../assets/img/products/product4.png'
-import product5 from './../../assets/img/products/product5.png'
 
 import './index.scss'
 
@@ -33,16 +28,13 @@ const ProductPage = () => {
     </div>
   )
 
-  const images = { product1, product2, product3, product4, product5 }
-  const key = product.url as keyof typeof images
-
   return (
     <div className='product-page-wrapper'>
       <GoToBackButton />
       <div className='product-page row'>
 
         <div className='product-page__image-container'>
-          <img src={images[key]} alt={product.title} />
+          <img src={producatImages[product.url]} alt={product.title} />
         </div>
 
         <div>
@@ -105,7 +97,6 @@ const ProductPage = () => {
               </span>
             </p>
           </div>
-
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { producatImages } from './productsImages'
+
 export interface IScreenWidth {
   width: number
 }
@@ -34,7 +36,7 @@ export type KeysCategories = keyof ICategories
 export type NamesCategories = ICategories[KeysCategories]
 
 export interface IProduct {
-  url: string,
+  url: keyof typeof producatImages,
   title: string,
   typeOfMeasure: TypesOfMeasure,
   valueOfMeasure: number,
