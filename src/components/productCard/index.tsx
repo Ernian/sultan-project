@@ -5,6 +5,12 @@ import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import './index.scss'
 
+import product1 from './../../assets/img/products/product1.png'
+import product2 from './../../assets/img/products/product2.png'
+import product3 from './../../assets/img/products/product3.png'
+import product4 from './../../assets/img/products/product4.png'
+import product5 from './../../assets/img/products/product5.png'
+
 interface IPropsProductCard extends IProduct {
   allCategories: ICategories
 }
@@ -23,14 +29,15 @@ const ProductCard = ({
   allCategories,
 }: IPropsProductCard) => {
 
-  const src = import.meta.env.PROD ? new URL(url.prod, import.meta.url).href : url.dev
+  const images = { product1, product2, product3, product4, product5 }
+  const key = url as keyof typeof images
 
   return (
     <div className='card'>
       <div>
         <Link to={`/product/${barcode}`} className='card__link' >
           <div className='card__image'>
-            <img src={src} alt={title} />
+            <img src={images[key]} alt={title} />
             <div className='card__measure-info'>
               <img src={typeOfMeasure === 'weight' ? weight : volume} alt={typeOfMeasure} />&nbsp;
               <span>{valueOfMeasure}  {typeOfMeasure === 'weight' ? 'г' : 'мл'}</span>

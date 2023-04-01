@@ -7,6 +7,12 @@ import weight from '../../assets/svg/weight-icon.svg'
 import shareIcon from '../../assets/svg/share-icon.svg'
 import downloadIcon from '../../assets/svg/download-black-icon.svg'
 
+import product1 from './../../assets/img/products/product1.png'
+import product2 from './../../assets/img/products/product2.png'
+import product3 from './../../assets/img/products/product3.png'
+import product4 from './../../assets/img/products/product4.png'
+import product5 from './../../assets/img/products/product5.png'
+
 import './index.scss'
 
 const ProductPage = () => {
@@ -27,7 +33,8 @@ const ProductPage = () => {
     </div>
   )
 
-  const src = import.meta.env.PROD ? product.url.prod : product.url.dev
+  const images = { product1, product2, product3, product4, product5 }
+  const key = product.url as keyof typeof images
 
   return (
     <div className='product-page-wrapper'>
@@ -35,7 +42,7 @@ const ProductPage = () => {
       <div className='product-page row'>
 
         <div className='product-page__image-container'>
-          <img src={src} alt={product.title} />
+          <img src={images[key]} alt={product.title} />
         </div>
 
         <div>
