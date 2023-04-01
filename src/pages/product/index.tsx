@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AddToCartButton from '../../components/addToCartButton'
 import GoToBackButton from '../../components/goToBackButton'
@@ -11,6 +12,8 @@ import downloadIcon from '../../assets/svg/download-black-icon.svg'
 import './index.scss'
 
 const ProductPage = () => {
+  const [count, setCount] = useState(1)
+
   const { id } = useParams()
   const storageProducts = localStorage.getItem('products')
   const products = storageProducts ? JSON.parse(storageProducts) as IProduct[] : null
@@ -27,6 +30,12 @@ const ProductPage = () => {
       <h2>Товар не найден</h2>
     </div>
   )
+
+  const incCount = () => setCount(count => count + 1)
+  const decCount = () => {
+    if (count === 1) return
+    setCount(count => count - 1)
+  }
 
   return (
     <div className='product-page-wrapper'>
@@ -56,19 +65,31 @@ const ProductPage = () => {
           <div className='product-page__buy-block'>
             <span>{product.price}&#8376;</span>
             <div className='product-page__buttons'>
-              <button className='product-page__button'>-</button>
-              1
-              <button className='product-page__button'>+</button>
+              <button
+                className='product-page__button'
+                onClick={decCount}
+              >-</button>
+              {count}
+              <button
+                className='product-page__button'
+                onClick={incCount}
+              >+</button>
             </div>
             <div className='product-page__buy-block__add-to-cart'>
-              <AddToCartButton />
+              <AddToCartButton
+                product={product}
+                count={count}
+              />
             </div>
           </div>
 
           <div className='product-page__share-delivery'>
             <div className='product-page__share-delivery__container'>
               <div className='product-page__share-delivery__add-to-cart'>
-                <AddToCartButton />
+                <AddToCartButton
+                  product={product}
+                  count={count}
+                />
               </div>
               <div className='product-page__share-link'>
                 <img src={shareIcon} alt="share link" />

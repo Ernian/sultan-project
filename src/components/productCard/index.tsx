@@ -62,7 +62,21 @@ const ProductCard = ({
 
       <div className='card__price'>
         {price}&#8376;
-        <AddToCartButton />
+        <AddToCartButton
+          product={{
+            url,
+            title,
+            typeOfMeasure,
+            valueOfMeasure,
+            barcode,
+            producer,
+            brand,
+            description,
+            price,
+            categories,
+          }}
+          count={1}
+        />
       </div>
 
     </div>

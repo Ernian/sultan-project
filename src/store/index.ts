@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import screenWidthReducer from './screenWidthSlice'
 import filterReducer from './filterSlice'
-// import cartReducer from './cartSlice'
+import cartReducer from './cartSlice'
 
 const store = configureStore({
   reducer: {
     screenWidth: screenWidthReducer,
-    filters: filterReducer
-    // cart: cartReducer,
+    filters: filterReducer,
+    cart: cartReducer,
   }
 })
 
