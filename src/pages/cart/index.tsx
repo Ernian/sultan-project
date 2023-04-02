@@ -22,7 +22,7 @@ const CartPage = () => {
       <h1>Корзина</h1>
       {
         !!cartProducts.length &&
-        cartProducts.map(product => <CartItem product={product} />)
+        cartProducts.map(product => <CartItem product={product} key={product.barcode} />)
       }
       {
         !!cartProducts.length &&

@@ -1,0 +1,27 @@
+.bread-crumbs {
+  display: none;
+  padding: 20px 0;
+
+  @media(min-width:1024px) {
+    & {
+      display: flex;
+    }
+  }
+
+  a,
+  span {
+    padding: 0 10px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3F4E65;
+  }
+
+  a {
+    border-right: 1px dashed rgba(63, 78, 101, 0.3);
+  }
+
+  span {
+    opacity: 0.5;
+  }
+}

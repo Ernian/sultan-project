@@ -97,7 +97,7 @@ const CheckboxFilterWidget = ({
               selectedBrands.includes(item as Brands)
             }
           />
-          {item}
+          {item}&nbsp;({amount[item]})
         </label>
       )
       arr.push(checkbox)

@@ -22,7 +22,7 @@ const DesktopHeader = () => {
           <NavLinks />
         </div>
       </section>
-      <section>
+      <section className='upper-under-line'>
         <div className="header-line row">
           <Logo width={156} height={66} color='#3F4E65' />
           <Link to='/catalog' className='catalog-link'>
