@@ -1,9 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IProduct } from '../types'
-
-interface IProductInCart extends IProduct {
-  count: number
-}
+import { IProduct, IProductInCart } from '../types'
 
 interface IAddToCartAction {
   product: IProduct
@@ -14,34 +10,54 @@ interface IInitialState {
   products: {
     [barcode: string]: IProductInCart,
   },
-  totalCost: number,
-  totalCount: number,
 }
 
 const initialState: IInitialState = {
   products: {},
-  totalCost: 0,
-  totalCount: 0
 }
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    actionAddToCart(state, { payload: { product, count } }
+    actionAddProductToCart(state, { payload: { product, count } }
       : PayloadAction<IAddToCartAction>) {
       if (state.products[product.barcode]) {
         state.products[product.barcode].count += count
-        state.totalCost += count * product.price
-        state.totalCount += count
       } else {
         state.products[product.barcode] = { ...product, count }
-        state.totalCost += count * product.price
-        state.totalCount += count
       }
+    },
+    actionDeleteProductFromCart(state, { payload }: PayloadAction<string>) {
+      if (state.products[payload]) {
+        delete state.products[payload]
+      }
+    },
+    actionIncProductCount(state, { payload }: PayloadAction<string>) {
+      if (state.products[payload]) {
+        state.products[payload].count += 1
+      }
+    },
+    actionDecProductCount(state, { payload }: PayloadAction<string>) {
+      if (!state.products[payload]) return
+
+      if (state.products[payload].count === 1) {
+        delete state.products[payload]
+      } else {
+        state.products[payload].count -= 1
+      }
+    },
+    actionClearCart(state) {
+      state.products = {}
     }
   }
 })
 
-export const { actionAddToCart } = cartSlice.actions
+export const {
+  actionAddProductToCart,
+  actionDeleteProductFromCart,
+  actionIncProductCount,
+  actionDecProductCount,
+  actionClearCart,
+} = cartSlice.actions
 export default cartSlice.reducer

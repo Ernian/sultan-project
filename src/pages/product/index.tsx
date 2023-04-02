@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import AddToCartButton from '../../components/addToCartButton'
 import GoToBackButton from '../../components/goToBackButton'
 import { ICategories, IProduct } from '../../types'
-import { producatImages } from '../../productsImages'
+import { producatsImages } from '../../productsImages'
 import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import shareIcon from '../../assets/svg/share-icon.svg'
@@ -43,7 +43,7 @@ const ProductPage = () => {
       <div className='product-page row'>
 
         <div className='product-page__image-container'>
-          <img src={producatImages[product.url]} alt={product.title} />
+          <img src={producatsImages[product.url]} alt={product.title} />
         </div>
 
         <div>

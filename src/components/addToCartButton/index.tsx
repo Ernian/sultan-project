@@ -1,5 +1,5 @@
 import { useAppDispatch } from '../../hooks/rtkHooks'
-import { actionAddToCart } from '../../store/cartSlice'
+import { actionAddProductToCart } from '../../store/cartSlice'
 import { IProduct } from '../../types'
 
 import './index.scss'
@@ -8,7 +8,7 @@ import icon from '../../assets/svg/add-to-cart-icon.svg'
 const AddToCartButton = ({ product, count = 1 }:
   { product: IProduct, count: number }) => {
   const dispatch = useAppDispatch()
-  const clickHandler = () => dispatch(actionAddToCart({ product, count }))
+  const clickHandler = () => dispatch(actionAddProductToCart({ product, count }))
 
   return (
     <button

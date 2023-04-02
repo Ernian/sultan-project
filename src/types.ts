@@ -1,4 +1,4 @@
-import { producatImages } from './productsImages'
+import { producatsImages } from './productsImages'
 
 export interface IScreenWidth {
   width: number
@@ -36,7 +36,7 @@ export type KeysCategories = keyof ICategories
 export type NamesCategories = ICategories[KeysCategories]
 
 export interface IProduct {
-  url: keyof typeof producatImages,
+  url: keyof typeof producatsImages,
   title: string,
   typeOfMeasure: TypesOfMeasure,
   valueOfMeasure: number,
@@ -46,6 +46,10 @@ export interface IProduct {
   description: string,
   price: number,
   categories: KeysCategories[]
+}
+
+export interface IProductInCart extends IProduct {
+  count: number
 }
 
 export interface IData {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import AddToCartButton from '../addToCartButton'
 import { ICategories, IProduct } from '../../types'
-import { producatImages } from '../../productsImages'
+import { producatsImages } from '../../productsImages'
 import volume from '../../assets/svg/volume-icon.svg'
 import weight from '../../assets/svg/weight-icon.svg'
 import './index.scss'
@@ -29,7 +29,7 @@ const ProductCard = ({
       <div>
         <Link to={`/product/${barcode}`} className='card__link' >
           <div className='card__image'>
-            <img src={producatImages[url]} alt={title} />
+            <img src={producatsImages[url]} alt={title} />
             <div className='card__measure-info'>
               <img src={typeOfMeasure === 'weight' ? weight : volume} alt={typeOfMeasure} />&nbsp;
               <span>{valueOfMeasure}  {typeOfMeasure === 'weight' ? 'г' : 'мл'}</span>

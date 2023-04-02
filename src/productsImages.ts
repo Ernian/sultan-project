@@ -4,4 +4,4 @@ import product3 from '/src/assets/img/products/product3.png'
 import product4 from '/src/assets/img/products/product4.png'
 import product5 from '/src/assets/img/products/product5.png'
 
-export const producatImages = { product1, product2, product3, product4, product5 }
+export const producatsImages = { product1, product2, product3, product4, product5 }
