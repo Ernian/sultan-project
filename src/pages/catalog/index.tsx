@@ -29,7 +29,7 @@ const {
 const CatalogPage = () => {
   //подготовка массива с названиями категорий
   const allCategories = Object.entries(categories) as [KeysCategories, NamesCategories][]
-  localStorage.setItem('categories', JSON.stringify(categories))
+
 
   const [fieldSort, setFieldSort] = useState<'title' | 'price'>('title')
   const [orderSort, setOrderSort] = useState<'asc' | 'desc'>('asc')
@@ -46,7 +46,7 @@ const CatalogPage = () => {
   //подготовка списка товаров с сервера/локального хранилища
   const storage = localStorage.getItem('products')
   const localStorageProducts = storage ? JSON.parse(storage) as IProduct[] : null
-  const products = (localStorageProducts && localStorageProducts.length) ?
+  const products = !!(localStorageProducts && localStorageProducts.length) ?
     localStorageProducts : jsonProducts
   localStorage.setItem('products', JSON.stringify(products))
 

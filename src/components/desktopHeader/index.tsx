@@ -6,11 +6,12 @@ import Logo from '../logo'
 import SalesDepartment from '../salesDepartment'
 import PriceList from '../priceList'
 import CartWidget from '../cartWidget'
+import SearchInput from '../searchInput'
 
 import catalogIcon from '../../assets/svg/catalog-icon.svg'
-import searchIcon from '../../assets/svg/search-icon.svg'
 
 const DesktopHeader = () => {
+
   return (
     <>
       <section className='underline'>
@@ -29,10 +30,7 @@ const DesktopHeader = () => {
             <span>Каталог</span>
             <img src={catalogIcon} alt="catalog icon" />
           </Link>
-          <div className="search-input">
-            <input type="text" placeholder='Поиск...' />
-            <img src={searchIcon} alt="search icon" />
-          </div>
+          <SearchInput />
           <SalesDepartment />
           <PriceList />
           <CartWidget widthIcon={41} heightIcon={29} />

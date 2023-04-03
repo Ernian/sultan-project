@@ -118,9 +118,13 @@
     color: #3F4E65;
   }
 
+  span {
+    cursor: pointer;
+  }
+
   @media (min-width:1081px) {
     & {
-      width: 512px;
+      width: 540px;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
