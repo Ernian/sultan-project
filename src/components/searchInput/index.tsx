@@ -1,13 +1,12 @@
-import { ChangeEventHandler, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAppDispatch } from '../../hooks/rtkHooks'
 import { actionLogIn } from '../../store/adminSlice'
+import Input from '../input'
 import searchIcon from '../../assets/svg/search-icon.svg'
 
 const SearchInput = () => {
   const [pass, setPass] = useState('')
   const dispatch = useAppDispatch()
-
-  const inputHandler: ChangeEventHandler<HTMLInputElement> = (event) => setPass(event.target.value)
 
   useEffect(() => {
     if (pass === 'adm') {
@@ -18,7 +17,11 @@ const SearchInput = () => {
 
   return (
     <div className="search-input">
-      <input type="text" placeholder='Поиск...' value={pass} onInput={inputHandler} />
+      <Input
+        placeholder='Поиск...'
+        value={pass}
+        setPass={setPass}
+      />
       <img src={searchIcon} alt="search icon" />
     </div>
   )

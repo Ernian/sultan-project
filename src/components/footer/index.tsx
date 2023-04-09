@@ -9,8 +9,8 @@ import masterCard from '../../assets/svg/master-card.svg'
 import whatsApp from '../../assets/svg/whats-app.svg'
 import telegram from '../../assets/svg/telegram.svg'
 
-const Footer = () => (
-  <footer className=''>
+const Footer = ({ ...props }) => (
+  <footer {...props}>
     <div className='footer row'>
       <div
         style={{
